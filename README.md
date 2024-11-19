@@ -7,9 +7,8 @@ This project consists of 4 different visualizations; a bubble chart, an interact
 
 The dataset (`CIA_world_factbook_2023.csv`) is a tabular dataset that provides country-level statistics across several dimensions, such as economic performance, demographics, and health metrics. The dataset includes multiple attributes for analysis and visualization.
 
----
 
-## **PREREQUISITES**
+## PREREQUISITES
 
 - **Python 3.11** or higher
 
@@ -23,93 +22,87 @@ Install the necessary libraries using:
 ```bash
 pip install pandas matplotlib PyQt6 argparse
 ```
-
-
-# User Interaction: CIA World Factbook
-
-This project consists of 4 different visualizations; a bubble chart, an interactive bubble chart (with dropdowns), interactive bubble charts (with drop downs + linked brushing), and interactive bubble charts (with drop downs + tooltip)
-
-## DATASET
-
-The dataset (`evs_assignment1.xlsx`) provides specifications for various electric vehicles, including attributes such as "Manufacturer," "Model," "Weight," "Top Speed," "Range," "Acceleration," "Efficiency," "Price," and "Region." The dataset is stored as an Excel workbook with 119 entries.
-
-## PREREQUISITES
-
-- **Python 3.11** or higher
-
-Required Libraries: 
-- **pandas** - 2.2.2
-- **seaborn** - 0.13.2
-- **matplotlib** - 3.9.2
-- **argparse** - 1.1
-
-Install the necessary libraries using:
-```bash
-pip install pandas seaborn matplotlib
-```
-
 ## TASK 1
 Objective
 
-Create two grouped bar charts to visualize the efficiency distribution of electric vehicles by production region. The first chart shows absolute counts, and the second chart shows the relative distribution.
+Create a static bubble chart visualizing relationships between four attributes:
 
-Script: p1_bars.py
+- GDP_per_capita (x-axis)
+- Military_Expenditures (y-axis)
+- Population (bubble size)
+- Life_Expectancy (bubble color)
+- 
+Script: p2_bubbles.py
 
 ### API Call
 
 ```bash
-python p1_bars.py -i <filename>
+python p2_bubbles.py -i <filename>
 ```
-filename: the path for the excel file the dataset is stored in
+filename: the path for the csv file the dataset is stored in
 
 ### EXAMPLE
 ```bash
-python p1_bars.py -i evs_assignment1.xlsx
+python p2_bubbles.py -i CIA_world_factbook_2023.csv
 ```
 
 ## TASK 2
 Objective
 
-Create a dynamic bubble chart to visualize the relationship between four different attributes of the electric vehicles. Each car is represented by a circle centered at (x=a1, y=a2), with the area corresponding to a3 and a color encoding a4.
+Here, I enhance the static bubble chart by adding interactive dropdown menus that allow the user to dynamically select which attributes map to:
+* x-axis
+* y-axis
+* bubble size
+* bubble color
+Additionally, a slider bar enables scaling of the bubble size. Changes to the dropdown or slider should instantly update the chart.
 
-Script: p1_bubbles.py
+Script: p2_widgets.py
 
 ### API Call
 
 ```bash
-python p1_bubbles.py -i <filename> -x <attribute> -y <attribute> -c <attribute> -s <attribute>
+python p2_widgets.py -i <dataset path>
 ```
-filename: the path for the excel file the dataset is stored in
-
--x attribute: the attribute to configure the x-axis
-
--y attribute: the attribute to configure the y-axis
-
--c attribute: the attribute to configure the color
-
--s attribute: the attribute to configure the size
+filename: the path for the csv file the dataset is stored in
 
 ### EXAMPLE
 ```bash
-python p1_bubbles.py -i evs_assignment1.xlsx -x "Weight" -y "Range" -c "Top Speed" -s "Acceleration"
+python p2_widgets.py -i CIA_world_factbook_2023.csv
 ```
 
 ## TASK 3
 Objective
 
-Create a dynamic scatter plot matrix (SPLOM) to visualize the relationships between multiple attributes of electric vehicles, showing correlations between each pair of attributes. Seaborn is a Python data visualization library based on Matplotlib that provides a high-level interface for drawing attractive and informative statistical graphics. In this task, Seaborn's pairplot function is used to create the scatter plot matrix (SPLOM)
+This task includes two interactive bubble charts displayed side by side. Each chart visualizes different attributes based on user selections via dropdown menus. Linked brushing is also implemented where if any bubbles are highlighted on one of the bubble charts, the corresponding bubbles are also highlighted on the other bubble chart. This allows users to delve deeper into how different countries are placed on the bubble chart depending on the indicators chosen.
 
-Script: p1_splom.py
+Script: p2_brushing.py
 
 ### API Call
 ```bash
-python p1_splom.py -i <filename> -a <attribute> <attribute> <attribute> .... <attribute>
+python p2_brushing.py -i <dataset path>
 ```
-filename: the path for the excel file the dataset is stored in
-
--a attribute: the attributes to include in the SPLOM. You can specify up to 7 attributes.
+filename: the path for the csv file the dataset is stored in
 
 ### EXAMPLE
 ```bash
-p1_splom.py -i evs_assignment1.xlsx -a "Weight" "Range" "Top Speed" "Acceleration"
+python p2_brushing.py -i CIA_world_factbook_2023.csv
 ```
+
+## TASK 4
+Objective
+
+The task was to have the same two bubble charts with dropdowns however now allowing users to have details on demand by implementing a tooltip feature. When the user hovers over a data point in the bubble chart, detailed information is displayed in a box display such as country name and attribute values for the selected data point. The corresponding data point of the selected data point on one bubble chart is also highlighted on the other.
+
+Script: p2_brushing.py
+
+### API Call
+```bash
+python p2_tooltip.py -i <dataset path>
+```
+filename: the path for the csv file the dataset is stored in
+
+### EXAMPLE
+```bash
+python p2_tooltip.py -i CIA_world_factbook_2023.csv
+```
+
