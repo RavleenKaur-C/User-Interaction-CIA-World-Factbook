@@ -23,7 +23,7 @@ Install the necessary libraries using:
 pip install pandas matplotlib PyQt6 argparse
 ```
 ## TASK 1
-Objective
+**Objective**
 
 Create a static bubble chart visualizing relationships between four attributes:
 
@@ -47,7 +47,7 @@ python p2_bubbles.py -i CIA_world_factbook_2023.csv
 ```
 
 ## TASK 2
-Objective
+**Objective**
 
 Here, I enhance the static bubble chart by adding interactive dropdown menus that allow the user to dynamically select which attributes map to:
 * x-axis
@@ -71,7 +71,7 @@ python p2_widgets.py -i CIA_world_factbook_2023.csv
 ```
 
 ## TASK 3
-Objective
+**Objective**
 
 This task includes two interactive bubble charts displayed side by side. Each chart visualizes different attributes based on user selections via dropdown menus. Linked brushing is also implemented where if any bubbles are highlighted on one of the bubble charts, the corresponding bubbles are also highlighted on the other bubble chart. This allows users to delve deeper into how different countries are placed on the bubble chart depending on the indicators chosen.
 
@@ -89,7 +89,7 @@ python p2_brushing.py -i CIA_world_factbook_2023.csv
 ```
 
 ## TASK 4
-Objective
+**Objective**
 
 The task was to have the same two bubble charts with dropdowns however now allowing users to have details on demand by implementing a tooltip feature. When the user hovers over a data point in the bubble chart, detailed information is displayed in a box display such as country name and attribute values for the selected data point. The corresponding data point of the selected data point on one bubble chart is also highlighted on the other.
 
