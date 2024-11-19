@@ -1,4 +1,31 @@
-#User Interaction: CIA World Factbook
+# CIA World Factbook: Interactive Data Visualization
+
+This project consists of 4 different visualizations; a bubble chart, an interactive bubble chart (with dropdowns), interactive bubble charts (with drop downs + linked brushing), and interactive bubble charts (with drop downs + tooltip). The dataset contains attributes for various countries, including "GDP per capita," "Birth Rate," "Military Expenditures," "Population," "Life Expectancy," and more. This project focuses on creating interactive visualizations that facilitate user exploration and understanding of the data.
+
+
+## DATASET
+
+The dataset (`CIA_world_factbook_2023.csv`) is a tabular dataset that provides country-level statistics across several dimensions, such as economic performance, demographics, and health metrics. The dataset includes multiple attributes for analysis and visualization.
+
+---
+
+## **PREREQUISITES**
+
+- **Python 3.11** or higher
+
+Required Libraries:
+- **pandas** - 2.2.2
+- **matplotlib** - 3.9.2
+- **PyQt6** - 6.5.2 (for creating user interfaces)
+- **argparse** - 1.1
+
+Install the necessary libraries using:
+```bash
+pip install pandas matplotlib PyQt6 argparse
+```
+
+
+# User Interaction: CIA World Factbook
 
 This project consists of 4 different visualizations; a bubble chart, an interactive bubble chart (with dropdowns), interactive bubble charts (with drop downs + linked brushing), and interactive bubble charts (with drop downs + tooltip)
 
